@@ -1,2 +1,2 @@
-# Magento Varnish
-Magento Varnish module
+# MageStack Varnish
+MageStack Varnish module for Magento
