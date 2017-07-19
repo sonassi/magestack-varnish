@@ -1,3 +1,5 @@
+# MageStack Varnish
+
 Simple Varnish module for Magento to provide admin controlled, URI-based exceptions (with regex support). This module should be used alongside the respective guides,
 
  - [Magento 1](https://www.sonassi.com/help/performance/implementing-varnish)
