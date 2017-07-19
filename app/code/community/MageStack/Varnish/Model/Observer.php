@@ -15,10 +15,10 @@ class MageStack_Varnish_Model_Observer {
     public function varnish(Varien_Event_Observer $observer)
     {
         $event = $observer->getEvent();
-        $helper = Mage::helper('varnish/cache');
+        $helper = Mage::helper('magestack.varnish/cache');
 
         // Cache disabled in Admin / System / Cache Management
-        if (!Mage::helper('varnish')->useVarnishCache()) {
+        if (!Mage::helper('magestack.varnish')->useVarnishCache()) {
             $helper->turnOffVarnish();
             return false;
         }
@@ -70,7 +70,7 @@ class MageStack_Varnish_Model_Observer {
     public function purgeCache($observer)
     {
         // If Varnish isn't turned on, exit
-        if (!Mage::helper('varnish')->useVarnishCache()) {
+        if (!Mage::helper('magestack.varnish')->useVarnishCache()) {
             return;
         }
 
@@ -78,7 +78,7 @@ class MageStack_Varnish_Model_Observer {
         $urls = array();
 
         if ($tags == array()) {
-            $errors = Mage::helper('varnish')->purgeEverything();
+            $errors = Mage::helper('magestack.varnish')->purgeEverything();
             if (!empty($errors)) {
                 Mage::getSingleton('adminhtml/session')->addError('The Varnish Purge has failed');
             } else {
@@ -145,7 +145,7 @@ class MageStack_Varnish_Model_Observer {
 
         if (!empty($relativeUrls)) {
 
-            $errors = Mage::helper('varnish')->purge($relativeUrls);
+            $errors = Mage::helper('magestack.varnish')->purge($relativeUrls);
             if (!empty($errors)) {
                 Mage::getSingleton('adminhtml/session')->addError('Some Varnish purges have failed: <br/>' . implode('<br/>', $errors));
             } else {
@@ -267,7 +267,7 @@ class MageStack_Varnish_Model_Observer {
      */
     public function cronBatchPurge($observer)
     {
-        Mage::helper('varnish')->purgeProcess();
+        Mage::helper('magestack.varnish')->purgeProcess();
     }
 
 }

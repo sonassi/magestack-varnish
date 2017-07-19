@@ -14,73 +14,73 @@
     </modules>
     <frontend>
         <routers>
-            <varnish>
+            <magestack.varnish>
                 <use>standard</use>
                 <args>
                     <module>MageStack_Varnish</module>
                     <frontName>varnish</frontName>
                 </args>
-            </varnish>
+            </magestack.varnish>
         </routers>
         <layout>
             <updates>
-                <varnish module="MageStack_Varnish">
+                <magestack.varnish module="MageStack_Varnish">
                     <file>varnish.xml</file>
-                </varnish>
+                </magestack.varnish>
             </updates>
         </layout>
     </frontend>
     <global>
         <blocks>
-            <varnish>
+            <magestack.varnish>
                 <class>MageStack_Varnish_Block</class>
-            </varnish>
+            </magestack.varnish>
         </blocks>
         <models>
-            <varnish>
+            <magestack.varnish>
                 <class>MageStack_Varnish_Model</class>
-            </varnish>
+            </magestack.varnish>
         </models>
         <helpers>
-            <varnish>
+            <magestack.varnish>
                 <class>MageStack_Varnish_Helper</class>
-            </varnish>
+            </magestack.varnish>
         </helpers>
         <cache>
             <types>
-                <varnish translate="label,description" module="varnish">
+                <magestack.varnish translate="label,description" module="magestack.varnish">
                     <label>Varnish</label>
                     <description>Full page cache in Varnish</description>
                     <tags></tags>
-                </varnish>
+                </magestack.varnish>
             </types>
         </cache>
         <events>
             <http_response_send_before>
                 <observers>
-                    <varnish>
+                    <magestack.varnish>
                         <type>singleton</type>
                         <class>varnish/observer</class>
                         <method>varnish</method>
-                    </varnish>
+                    </magestack.varnish>
                 </observers>
             </http_response_send_before>
             <application_clean_cache>
                 <observers>
-                    <varnish>
+                    <magestack.varnish>
                         <type>singleton</type>
                         <class>varnish/observer</class>
                         <method>purgeCache</method>
-                    </varnish>
+                    </magestack.varnish>
                 </observers>
             </application_clean_cache>
             <catalog_category_save_commit_after>
                 <observers>
-                    <varnish>
+                    <magestack.varnish>
                         <type>singleton</type>
                         <class>varnish/observer</class>
                         <method>onCategorySave</method>
-                    </varnish>
+                    </magestack.varnish>
                 </observers>
             </catalog_category_save_commit_after>
         </events>
@@ -91,7 +91,7 @@
             <adminhtml>
                 <args>
                     <modules>
-                        <varnish before="Mage_Adminhtml">MageStack_Varnish</varnish>
+                        <varnish before="Mage_Adminhtml">MageStack_Varnish</magestack.varnish>
                     </modules>
                 </args>
             </adminhtml>
@@ -103,17 +103,17 @@
             <resources>
                 <admin>
                     <children>
-                        <varnish>
+                        <magestack.varnish>
                             <title>Varnish</title>
                             <sort_order>10</sort_order>
-                        </varnish>
+                        </magestack.varnish>
                         <system>
                             <children>
                                 <config>
                                     <children>
-                                        <varnish>
+                                        <magestack.varnish>
                                             <title>Varnish Options</title>
-                                        </varnish>
+                                        </magestack.varnish>
                                     </children>
                                 </config>
                             </children>
@@ -126,22 +126,22 @@
 
     <crontab>
         <jobs>
-            <varnish>
+            <magestack.varnish>
                 <schedule>
                     <cron_expr>*/10 * * * *</cron_expr>
                 </schedule>
                 <run>
                     <model>varnish/observer::cronBatchPurge</model>
                 </run>
-            </varnish>
+            </magestack.varnish>
         </jobs>
     </crontab>
 
     <default>
-        <varnish>
+        <magestack.varnish>
             <options>
                 <servers>http://lb1.i</servers>
             </options>
-        </varnish>
+        </magestack.varnish>
     </default>
 </config>

@@ -10,7 +10,7 @@ class MageStack_Varnish_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function useVarnishCache()
     {
-        return Mage::app()->useCache('varnish');
+        return Mage::app()->useCache('magestack.varnish');
     }
 
     /**

@@ -15,9 +15,9 @@ class MageStack_Varnish_CacheController extends Mage_Adminhtml_CacheController {
     {
         $types = $this->getRequest()->getParam('types');
 
-        if (Mage::helper('varnish')->useVarnishCache()) {
+        if (Mage::helper('magestack.varnish')->useVarnishCache()) {
             if ((is_array($types) && in_array('varnish', $types)) || $types == 'varnish') {
-                Mage::helper('varnish')->purgeEverything();
+                Mage::helper('magestack.varnish')->purgeEverything();
                 $this->_getSession()->addSuccess(Mage::helper('adminhtml')->__('Varnish cache type purged.'));
             }
         }
