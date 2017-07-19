@@ -40,6 +40,9 @@
             <magestack.varnish>
                 <class>MageStack_Varnish_Model</class>
             </magestack.varnish>
+            <magestackvarnish>
+                <class>MageStack_Varnish_Model</class>
+            </magestackvarnish>
         </models>
         <helpers>
             <magestack.varnish>
@@ -48,7 +51,7 @@
         </helpers>
         <cache>
             <types>
-                <magestack.varnish translate="label,description" module="magestack.varnish">
+                <magestack.varnish translate="label,description" module="MageStack_Varnish">
                     <label>Varnish</label>
                     <description>Full page cache in Varnish</description>
                     <tags></tags>
@@ -91,7 +94,7 @@
             <adminhtml>
                 <args>
                     <modules>
-                        <varnish before="Mage_Adminhtml">MageStack_Varnish</magestack.varnish>
+                        <magestack.varnish before="Mage_Adminhtml">MageStack_Varnish</magestack.varnish>
                     </modules>
                 </args>
             </adminhtml>
@@ -131,7 +134,7 @@
                     <cron_expr>*/10 * * * *</cron_expr>
                 </schedule>
                 <run>
-                    <model>varnish/observer::cronBatchPurge</model>
+                    <model>magestackvarnish/observer::cronBatchPurge</model>
                 </run>
             </magestack.varnish>
         </jobs>

@@ -7,7 +7,7 @@
 -->
 <config>
     <sections>
-        <magestack.varnish translate="label" module="magestack.varnish">
+        <magestack.varnish translate="label" module="MageStack_Varnish">
             <label>MageStack</label>
             <tab>general</tab>
             <sort_order>1000</sort_order>
@@ -26,8 +26,8 @@
                     <fields>
                         <excluded_uris>
                             <label>Excluded URIs</label>
-                            <frontend_model>varnish/system_config_form_field_exclusions</frontend_model>
-                            <backend_model>varnish/system_config_backend_exclusion</backend_model>
+                            <frontend_model>magestack.varnish/system_config_form_field_exclusions</frontend_model>
+                            <backend_model>magestack.varnish/system_config_backend_exclusion</backend_model>
                             <sort_order>1</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
