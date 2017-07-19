@@ -10,7 +10,7 @@ Simple Varnish module for Magento to provide admin controlled, URI-based excepti
  1. Download and extract the module
 
     ~~~~
-    wget -O master.zip -no-check-certificate https://github.com/sonassi/magestack-varnish/archive/master.zip
+    wget -O master.zip --no-check-certificate https://github.com/sonassi/magestack-varnish/archive/master.zip
     unzip master.zip
     rsync -vPa magestack-varnish*/app/ app/
     rsync -vPa magestack-varnish*/lib/ lib/
