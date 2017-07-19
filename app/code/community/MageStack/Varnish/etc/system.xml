@@ -7,7 +7,7 @@
 -->
 <config>
     <sections>
-        <magestack.varnish translate="label" module="MageStack_Varnish">
+        <magestack.varnish translate="label" module="magestackvarnish">
             <label>MageStack</label>
             <tab>general</tab>
             <sort_order>1000</sort_order>

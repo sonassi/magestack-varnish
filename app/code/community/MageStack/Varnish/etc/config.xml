@@ -24,7 +24,7 @@
         </routers>
         <layout>
             <updates>
-                <magestack.varnish module="MageStack_Varnish">
+                <magestack.varnish module="magestackvarnish">
                     <file>varnish.xml</file>
                 </magestack.varnish>
             </updates>
@@ -51,7 +51,7 @@
         </helpers>
         <cache>
             <types>
-                <magestack.varnish translate="label,description" module="MageStack_Varnish">
+                <magestack.varnish translate="label,description" module="magestackvarnish">
                     <label>Varnish</label>
                     <description>Full page cache in Varnish</description>
                     <tags></tags>
