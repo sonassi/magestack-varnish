@@ -63,7 +63,7 @@
                 <observers>
                     <magestack.varnish>
                         <type>singleton</type>
-                        <class>varnish/observer</class>
+                        <class>magestack.varnish/observer</class>
                         <method>varnish</method>
                     </magestack.varnish>
                 </observers>
@@ -72,7 +72,7 @@
                 <observers>
                     <magestack.varnish>
                         <type>singleton</type>
-                        <class>varnish/observer</class>
+                        <class>magestack.varnish/observer</class>
                         <method>purgeCache</method>
                     </magestack.varnish>
                 </observers>
@@ -81,7 +81,7 @@
                 <observers>
                     <magestack.varnish>
                         <type>singleton</type>
-                        <class>varnish/observer</class>
+                        <class>magestack.varnish/observer</class>
                         <method>onCategorySave</method>
                     </magestack.varnish>
                 </observers>
