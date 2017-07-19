@@ -91,10 +91,11 @@ class MageStack_Varnish_Helper_Cache extends Mage_Core_Helper_Abstract
         if (!is_array($excludes))
             return false;
 
-        $currentUri = $_SERVER['REQUEST_URI'];
+        $currentUri = Mage::app()->getRequest()->getRequestUri();
 
         foreach ($excludes as $exclude) {
-            if(stripos($currentUri, $exclude['regexp']) !== false)
+            $regex = sprintf("#%s#", $exclude['regexp']);
+            if (preg_match($regex, $currentUri))
                 return true;
         }
 

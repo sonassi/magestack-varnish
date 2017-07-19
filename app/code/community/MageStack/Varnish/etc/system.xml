@@ -8,7 +8,7 @@
 <config>
     <sections>
         <varnish translate="label" module="varnish">
-            <label>Varnish</label>
+            <label>MageStack</label>
             <tab>general</tab>
             <sort_order>1000</sort_order>
             <show_in_default>1</show_in_default>
