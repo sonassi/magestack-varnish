@@ -85,7 +85,7 @@ class MageStack_Varnish_Helper_Cache extends Mage_Core_Helper_Abstract
      */
     public function matchException()
     {
-        $excludesConfig = Mage::getStoreConfig('varnish/options/excluded_uris');
+        $excludesConfig = Mage::getStoreConfig('magestack.varnish/options/excluded_uris');
         $excludes = unserialize($excludesConfig);
 
         if (!is_array($excludes))
