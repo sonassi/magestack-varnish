@@ -43,6 +43,16 @@
                             <show_in_store>1</show_in_store>
                             <comment><![CDATA[Specify where varnish servers can be found. In most cases only a single entry (eg. lb1.i) is required.]]></comment>
                         </servers>
+                        <session_messages>
+                            <label>Add Purged URL List Session Messages</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Optional way to disable Purged URL List Session messages in admin.]]></comment>
+                        </session_messages>
                     </fields>
                 </options>
             </groups>

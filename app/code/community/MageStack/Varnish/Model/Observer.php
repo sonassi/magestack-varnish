@@ -146,10 +146,18 @@ class MageStack_Varnish_Model_Observer {
         if (!empty($relativeUrls)) {
 
             $errors = Mage::helper('magestack.varnish')->purge($relativeUrls);
-            if (!empty($errors)) {
-                Mage::getSingleton('adminhtml/session')->addError('Some Varnish purges have failed: <br/>' . implode('<br/>', $errors));
+            if (Mage::helper('magestack.varnish')->getShowSessionMessages()) {
+                if (!empty($errors)) {
+                    Mage::getSingleton('adminhtml/session')->addError('Some Varnish purges have failed: <br/>' . implode('<br/>', $errors));
+                } else {
+                    Mage::getSingleton('adminhtml/session')->addSuccess('All Purges have been submitted successfully: <br/>' . implode('<br/>', $relativeUrls));
+                }
             } else {
-                Mage::getSingleton('adminhtml/session')->addSuccess('All Purges have been submitted successfully: <br/>' . implode('<br/>', $relativeUrls));
+                if (!empty($errors)) {
+                    Mage::getSingleton('adminhtml/session')->addError('Some Varnish purges have failed');
+                } else {
+                    Mage::getSingleton('adminhtml/session')->addSuccess('All Purges have been submitted successfully');
+                }
             }
         }
 

@@ -20,7 +20,7 @@ class MageStack_Varnish_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function getVarnishServers()
     {
-        $serverConfig = Mage::getStoreConfig('varnish/options/servers');
+        $serverConfig = Mage::getStoreConfig('magestack.varnish/options/servers');
         $varnishServers = array();
 
         foreach (explode(',', $serverConfig) as $value ) {
@@ -28,6 +28,16 @@ class MageStack_Varnish_Helper_Data extends Mage_Core_Helper_Abstract
         }
 
         return $varnishServers;
+    }
+
+    /**
+     * Return whether to show session messages from System Configuration
+     *
+     * @return mixed
+     */
+    public function getShowSessionMessages()
+    {
+        return Mage::getStoreConfig('magestack.varnish/options/session_messages');
     }
 
     /**

@@ -144,6 +144,7 @@
         <magestack.varnish>
             <options>
                 <servers>http://lb1.i</servers>
+                <session_messages>1</session_messages>
             </options>
         </magestack.varnish>
     </default>
