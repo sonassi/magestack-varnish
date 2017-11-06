@@ -31,6 +31,16 @@ class MageStack_Varnish_Helper_Data extends Mage_Core_Helper_Abstract
     }
 
     /**
+     * Return whether to show session messages from System Configuration
+     *
+     * @return mixed
+     */
+    public function getShowSessionMessages()
+    {
+        return Mage::getStoreConfig('magestack.varnish/options/session_messages');
+    }
+
+    /**
      * Create a queue of urls on all varnish servers.
      *
      * @param array $urls
